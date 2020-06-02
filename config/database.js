@@ -1,10 +1,10 @@
 'use strict'
-//const Url = require('url-parse')
+const Url = require('url-parse')
 
 /** @type {import('@adonisjs/framework/src/Env')} */
 const Env = use('Env')
 // Se você desejar testar criando a sua própria instância do ClearDB MySQL
-//const CLEARDB_DATABASE_URL = new Url(Env.get('CLEARDB_DATABASE_URL'))
+const CLEARDB_DATABASE_URL = new Url(Env.get('CLEARDB_DATABASE_URL'))
 
 /** @type {import('@adonisjs/ignitor/src/Helpers')} */
 const Helpers = use('Helpers')
@@ -60,14 +60,14 @@ module.exports = {
       // password: Env.get('DB_PASSWORD', ''),
       // database: Env.get('DB_DATABASE', 'adonis')
     //   host: Env.get('DB_HOST', CLEARDB_DATABASE_URL.host),
-    // port: Env.get('DB_PORT', ''),
-    // user: Env.get('DB_USER', CLEARDB_DATABASE_URL.username),
-    // password: Env.get('DB_PASSWORD', CLEARDB_DATABASE_URL.password),
-    // database: Env.get('DB_DATABASE', CLEARDB_DATABASE_URL.pathname.substr(1))
-      host: "us-cdbr-east-05.cleardb.net",
-      user :"b5412e08d8468d",
-      password: "9479261d",
-      database: "heroku_0be97d671790a17"
+    port: Env.get('DB_PORT', ''),
+    user: Env.get('DB_USER', CLEARDB_DATABASE_URL.username),
+    password: Env.get('DB_PASSWORD', CLEARDB_DATABASE_URL.password),
+    database: Env.get('DB_DATABASE', CLEARDB_DATABASE_URL.pathname.substr(1))
+      // host: "us-cdbr-east-05.cleardb.net",
+      // user :"b5412e08d8468d",
+      // password: "9479261d",
+      // database: "heroku_0be97d671790a17"
     },
     debug: Env.get('DB_DEBUG', false)
   },

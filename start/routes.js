@@ -20,7 +20,7 @@ JWT - Json Web Token
 
 Route.group(()=>{
   Route.resource('users','UserController').apiOnly()
-}).prefix('admin').middleware(['auth'])
+}).prefix('admin')
 
 Route.group(()=>{
   Route.resource('products','ProductController').apiOnly()

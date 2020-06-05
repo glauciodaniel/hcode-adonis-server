@@ -7,6 +7,9 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
+
+Route.get('/products','ProductsController.index')
+
 Route.post('/auths','AuthController.store')
 Route.post('/users','UserController.store')
 
